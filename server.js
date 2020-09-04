@@ -18,7 +18,7 @@ const collections = ["notes"];
 const db = mongojs(databaseUrl, collections);
 
 db.on("error", error => {
-  console.log("Database Error:", error);
+  console.log("Database ERRORR !!! !!!!! ! ! ! !!!!!!!!!!!!!!!!!!!!! Error:", error);
 });
 
 app.get("/", (req, res) => {
@@ -40,6 +40,7 @@ app.post("/submit", (req, res) => {
 app.get("/all", (req, res) => {
   db.notes.find({}, (error, found) => {
     if (error) {
+      console.log("ERROR IN GET ALL !!! NOOOOO!!!!!!!!!!!!!! !!!")
       console.log(error);
     } else {
       res.json(found);
